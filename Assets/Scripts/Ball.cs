@@ -6,12 +6,21 @@ public class Ball : MonoBehaviour
 {
     public Vector3 dir;
     public float speed;
+
     private bool startgame = false;
+
+    private GameOver gameOver;
+    private Score score;
+
+    private Rigidbody rb;
 
 
     void Start()
     {
-        
+        gameOver = FindObjectOfType<GameOver>();
+        score = FindObjectOfType<Score>();
+
+        rb = GetComponent<Rigidbody>();
     }
 
 
@@ -21,7 +30,7 @@ public class Ball : MonoBehaviour
         {
             if (!startgame)
             {
-                startgame = true;
+                
             }
             else
             {
@@ -43,7 +52,10 @@ public class Ball : MonoBehaviour
         
         if (transform.position.y <-2f)
         {
-            SceneManager.LoadScene(0);
+            gameOver.OpenMenu();
+            score.StopScore();
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+            dir = Vector3.zero;
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -52,6 +64,12 @@ public class Ball : MonoBehaviour
         {
             collision.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
+    }
+
+    public void PlayGame()
+    {
+        startgame = true;
+        Debug.Log(startgame);
     }
 
 }

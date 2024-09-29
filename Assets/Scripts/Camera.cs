@@ -18,4 +18,5 @@ public class Camera : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, ball.position+ofset, speed * Time.deltaTime); 
     }
+
 }
