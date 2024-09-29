@@ -48,7 +48,7 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-     if (collision.gameObject.tag=="Floor")
+        if (collision.gameObject.tag=="Floor")
         {
             collision.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
