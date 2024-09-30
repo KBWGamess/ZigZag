@@ -32,12 +32,12 @@ public class Score : MonoBehaviour
     // Обновление текста в UI
     void UpdateScoreText()
     {
-        scoreText.text = "SCORE: " + score.ToString();
+        scoreText.text = "Очки: " + score.ToString();
     }
 
     void UpdateHighScoreText()
     {
-        highscoretext.text = "HIGHSCORE: " + highscore.ToString();
+        highscoretext.text = "Рекорд: " + highscore.ToString();
     }
 
     void ScoreStart()

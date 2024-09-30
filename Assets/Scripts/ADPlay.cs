@@ -9,7 +9,7 @@ public class ADPlay : MonoBehaviour
 
     void Start()
     {
-        Ad();
+       
     }
 
 
@@ -28,28 +28,7 @@ public class ADPlay : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void Ad()
-    {
-        YandexApi.Init(() =>
-        {
-            YandexApi.GetPlayer(() =>
-            {
-                Mute();
-                YandexApi.ShowFullscreenAdv(() =>
-                { Unmute(); }, (string error) =>
-                { Unmute(); });
-                var a = YandexApi.DeviceInfo();
-                Debug.Log(a);
-                var playerInfo = YandexApi.GetPlayerInfo();
-                Debug.Log(JsonUtility.ToJson(playerInfo));
-            }, (error) => Debug.Log(error));
-        }, (error) => Debug.Log(error));
-    }
 
-    public void AdPlay()
-    {
-        YandexApi.ShowFullscreenAdv();
-    }
 
     public void Mute()
     {

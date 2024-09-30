@@ -12,11 +12,9 @@ public class CrystalCollect : MonoBehaviour
 
     private int allCrystals;
     private int currentSesionCrystals;
-    private ADPlay aDplay;
 
     void Start()
     {
-        aDplay = FindObjectOfType<ADPlay>();
         allCrystals = PlayerPrefs.GetInt("crystals", 0);
         ChangeText();
     }
@@ -35,7 +33,7 @@ public class CrystalCollect : MonoBehaviour
 
     public void DoubleCrystals()
     {
-        aDplay.AdPlay();
+
         allCrystals += currentSesionCrystals;
         currentSesionCrystals *= 2;
         doubleButton.interactable = false;
