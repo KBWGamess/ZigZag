@@ -28,4 +28,5 @@ public class Store : MonoBehaviour
         menuIdle.SetBool("open", false);
         menuIdle.SetBool("close", true);
     }
+
 }
