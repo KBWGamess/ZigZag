@@ -19,4 +19,9 @@ public class Camera : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, ball.position+ofset, speed * Time.deltaTime); 
     }
 
+    public void MusicOff()
+    {
+        AudioListener.volume = 0f;
+    }
+
 }
