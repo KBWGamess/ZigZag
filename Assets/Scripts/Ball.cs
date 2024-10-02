@@ -54,6 +54,7 @@ public class Ball : MonoBehaviour
         {
             gameOver.OpenMenu();
             score.StopScore();
+            AudioListener.volume = 0f;
             rb.constraints = RigidbodyConstraints.FreezePosition;
             dir = Vector3.zero;
         }
